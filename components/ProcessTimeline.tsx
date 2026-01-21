@@ -20,6 +20,12 @@ const steps = [
         title: "IMPLEMENTATION",
         subtitle: "On-site Supervision",
         description: "Design is nothing without execution. We oversee the installation, focus every beam, and program the scenes for perfection."
+    },
+    {
+        number: "04",
+        title: "DELIVERY & AFTER-SALES",
+        subtitle: "Ensuring Perfection",
+        description: "We make sure the client is happy with the light effect and adjust to fit the environment better, providing ongoing care for your investment."
     }
 ];
 

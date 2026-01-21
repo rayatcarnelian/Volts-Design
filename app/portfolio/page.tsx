@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -59,6 +59,18 @@ function PortfolioContent() {
     const initialCategory = searchParams.get("category");
     const [activeCategory, setActiveCategory] = useState(initialCategory && categories.includes(initialCategory) ? initialCategory : "All");
     const [selectedProject, setSelectedProject] = useState<typeof allProjects[0] | null>(null);
+
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (selectedProject) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [selectedProject]);
 
     const filteredProjects = activeCategory === "All"
         ? allProjects

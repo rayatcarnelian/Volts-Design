@@ -22,18 +22,7 @@ export default function Home() {
         <ProcessTimeline />
       </div>
 
-      {/* Beam Simulator Section */}
-      <section className="py-24 bg-[#050505] border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-serif text-[#E5E5E5] mb-4">
-            PRECISION <span className="text-[#D4AF37]">ENGINEERING.</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Lighting is physics. Adjust the beam angle to see how we sculpt objects.
-          </p>
-        </div>
-        <BeamSimulator />
-      </section>
+      {/* Sections Merged below */}
 
       {/* Work Section */}
       <section id="work">
@@ -41,9 +30,7 @@ export default function Home() {
       </section>
 
 
-      <div id="services">
-        <ServicesList />
-      </div>
+      {/* Services List removed as per request (redundant categories) */}
 
       <div id="about"> {/* Optional ID for Comparison if needed, or keeping generic div */}
         <section className="py-24 bg-[#050505] relative overflow-hidden">
@@ -57,8 +44,18 @@ export default function Home() {
               See how we turn standard spaces into cinematic experiences.
             </p>
 
-            <div className="mb-16">
+            <div className="mb-24">
               <ComparisonSlider />
+            </div>
+
+            <div className="mb-16">
+              <h2 className="text-3xl md:text-5xl font-serif text-[#E5E5E5] mb-4">
+                PRECISION <span className="text-[#D4AF37]">ENGINEERING.</span>
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto mb-12">
+                Lighting is physics. Adjust the beam angle to see how we sculpt objects.
+              </p>
+              <BeamSimulator />
             </div>
 
             <div className="p-8 border border-[#D4AF37]/30 bg-[#D4AF37]/5 backdrop-blur-sm rounded-sm inline-block">

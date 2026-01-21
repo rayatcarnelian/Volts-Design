@@ -25,7 +25,7 @@ export default function Contact() {
                     <div className="space-y-6 font-mono text-sm tracking-widest">
                         <div className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
                             <Mail className="w-5 h-5 text-[#D4AF37]" />
-                            <a href="mailto:hazem@voltsdesign.com">HAZEM@VOLTSDESIGN.COM</a>
+                            <a href="mailto:management@voltsdesign.com">MANAGEMENT@VOLTSDESIGN.COM</a>
                         </div>
                         <div className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
                             <MessageCircle className="w-5 h-5 text-[#D4AF37]" />
@@ -33,7 +33,7 @@ export default function Contact() {
                         </div>
                         <div className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
                             <Instagram className="w-5 h-5 text-[#D4AF37]" />
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">@VOLTS.DESIGN</a>
+                            <a href="https://instagram.com/volts.electra" target="_blank" rel="noopener noreferrer">@VOLTS.ELECTRA</a>
                         </div>
                     </div>
                 </div>
