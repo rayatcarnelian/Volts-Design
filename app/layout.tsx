@@ -58,6 +58,9 @@ export const metadata: Metadata = {
     creator: "@voltsdesign_my",
     images: ["/og-image.jpg"],
   },
+  verification: {
+    google: "fqvAJ2_juF8dct8iJ2F_YDtyk48NViQnYokJLzGbDbU",
+  },
   robots: {
     index: true,
     follow: true,
