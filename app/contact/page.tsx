@@ -19,17 +19,20 @@ export default function Contact() {
                         START A <br /> <span className="text-[#D4AF37] italic">DIALOGUE.</span>
                     </h1>
                     <p className="text-gray-400 font-sans text-lg mb-12 max-w-md leading-relaxed">
-                        We are selective with our collaborations. Tell us about your vision, and let's see if we are the right architects for your light.
+                        We are selective with our collaborations. Tell us about your vision, and let&apos;s see if we are the right architects for your light.
                     </p>
 
                     <div className="space-y-6 font-mono text-sm tracking-widest">
                         <div className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
                             <Mail className="w-5 h-5 text-[#D4AF37]" />
-                            <a href="mailto:management@voltsdesign.com">management@voltsdesign.com</a>
+                            <a href="mailto:info@voltsdesign.com">info@voltsdesign.com</a>
                         </div>
-                        <div className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
-                            <MessageCircle className="w-5 h-5 text-[#D4AF37]" />
-                            <a href="https://wa.me/60182753483" target="_blank" rel="noopener noreferrer">+60 18-275 3483</a>
+                        <div className="flex flex-col items-center p-8 bg-[#121212] rounded-sm">
+                            <MessageCircle className="w-8 h-8 text-[#D4AF37] mb-4" />
+                            <h3 className="text-xl font-serif text-white mb-2">WhatsApp</h3>
+                            <p className="text-gray-400 font-mono text-sm">
+                                <a href="https://wa.me/60182985882" target="_blank" rel="noopener noreferrer">+60 18-298 5882</a>
+                            </p>
                         </div>
                         <div className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
                             <Instagram className="w-5 h-5 text-[#D4AF37]" />

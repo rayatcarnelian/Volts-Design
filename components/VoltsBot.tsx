@@ -21,69 +21,46 @@ export default function VoltsBot() {
         scrollToBottom();
     }, [messages, isThinking]);
 
-    // Knowledge Base Simulation
-    const generateResponse = (input: string) => {
-        const lower = input.toLowerCase();
-        const disclaimer = "\n\n(Note: This is an automated architectural response. For precise project details, please contact Hazem via the form above.)";
-
-        // --- PHYSICS & TECHNICAL ---
-        if (lower.includes("cri") || lower.includes("rendering")) return "CRI (Color Rendering Index) is non-negotiable. We strictly use CRI 95+ (R9 > 90) fixtures. Standard LEDs (CRI 80) make wood look red and skin look grey. Good lighting renders reality as it was meant to be seen." + disclaimer;
-        if (lower.includes("kelvin") || lower.includes("temperature") || lower.includes("warm") || lower.includes("cool")) return "For residential, 2700K is the gold standard for intimate warmth. Kitchens/Bathrooms can handle 3000K for clarity. We avoid 4000K+ unless it's a clinical environment. A home should feel like a sanctuary, not a pharmacy." + disclaimer;
-        if (lower.includes("lux") || lower.includes("lumen") || lower.includes("bright")) return "brightness is relative. We design for 'Perceived Brightness' (vertical illumination) rather than just Lux on the floor. 150 Lux is plenty for a living room if the walls are washed effectively." + disclaimer;
-        if (lower.includes("beam") || lower.includes("angle") || lower.includes("spread")) return "Beam angle is our paintbrush. 10°-15° for pinpointing art. 24°-36° for task surfaces. 60°+ for general floods. Mixing beam angles creates hierarchy and drama in a space." + disclaimer;
-        if (lower.includes("glare") || lower.includes("ugr")) return "Glare is the enemy of luxury. All our specified fixtures use deep-baffle technology or honeycomb louvers to ensure you see the light, not the source. This is what separates 'lights' from 'lighting design'." + disclaimer;
-
-        // --- DESIGN TECHNIQUES ---
-        if (lower.includes("layer") || lower.includes("ambient") || lower.includes("task")) return "We use the 'Three-Layer' principle: 1. Ambient (Soft fill), 2. Task (Functional), 3. Accent (Emotional). Most failures in design come from relying on just one layer (usually a grid of downlights)." + disclaimer;
-        if (lower.includes("cove") || lower.includes("indirect") || lower.includes("ceiling")) return "Indirect cove lighting is the best way to raise perceived ceiling height and create a soft, shadow-free environment. It must be dimmable to transition from 'Day Mode' to 'Evening Mode'." + disclaimer;
-        if (lower.includes("wall wash") || lower.includes("graze") || lower.includes("texture")) return "Wall Washing flattens a wall's texture (good for art), while Wall Grazing (light close to the wall) exaggerates texture (good for stone/brick). Choosing the wrong one can ruin a feature wall." + disclaimer;
-        if (lower.includes("art") || lower.includes("painting")) return "Lighting art is math. We use the '30-degree rule' to prevent glare reflecting off the glass into your eyes, while using high-CRI framing projectors to cut the light exactly to the canvas shape." + disclaimer;
-
-        // --- RESIDENTIAL AREAS ---
-        if (lower.includes("kitchen") || lower.includes("island")) return "For islands, we recommend a high-CRI linear pendant or localized spots for prep work (500 Lux), paired with under-cabinet lighting. Dimmers are mandatory to turn the kitchen from a 'workspace' to a 'hosting space' at night." + disclaimer;
-        if (lower.includes("bedroom") || lower.includes("sleep")) return "Bedrooms need low-level lighting. We prefer floor-level guide lights and joinery-integrated lighting over overhead downlights. The goal is to prepare the circadian system for sleep." + disclaimer;
-        if (lower.includes("bathroom") || lower.includes("vanity") || lower.includes("mirror")) return "Never put a downlight directly over your head in a bathroom; it causes 'panda eyes'. Light should come from face level (sconces) or mirror-integrated linear sides for flawless grooming." + disclaimer;
-        if (lower.includes("living") || lower.includes("lounge")) return "The Living Room is for conversation. Eliminate glare. Use table lamps, floor lamps, and joinery lighting to create 'pools of light' that draw people together." + disclaimer;
-
-        // --- COMMERCIAL ---
-        if (lower.includes("hotel") || lower.includes("f&b") || lower.includes("restaurant")) return "In hospitality, darkness is as important as light. We use high contrast ratios (10:1) to create intimacy. Each table should feel private." + disclaimer;
-        if (lower.includes("office") || lower.includes("work")) return "Modern offices need to balance screen-glare control with biological support. We recommend Tunable White systems that mimic the sun's pattern (Cool AM, Warm PM) to boost productivity and sleep quality." + disclaimer;
-
-        // --- CONTROL ---
-        if (lower.includes("dali") || lower.includes("dim") || lower.includes("control")) return "We specify DALI-2 for robust, addressable control. It allows us to group lights via software, not just wiring. This means you can change your 'Evening Scene' without calling an electrician." + disclaimer;
-        if (lower.includes("lutron") || lower.includes("knx")) return "We are certified partners with ecosystems like Lutron and KNX. A single keypad replacing a bank of 6 switches is the ultimate sign of a luxury finish." + disclaimer;
-
-        // --- GENERAL ---
-        if (lower.includes("cost") || lower.includes("price") || lower.includes("budget")) return "Architectural lighting is an investment. A typical luxury residence package ranges from RM30k to RM150k depending on fixture grade (Italy/Germany vs. Local) and control complexity." + disclaimer;
-        if (lower.includes("hazem") || lower.includes("who are you")) return "I am Volts Intelligence, a neural model trained on Hazem's design principles. Hazem himself is the principal lighting architect, obsessed with photon behavior." + disclaimer;
-        if (lower.includes("hello") || lower.includes("hi")) return "Greetings. I am ready to calculate beam angles and contrast ratios. How can I assist with your space?";
-
-        return "That is a specific query. While I have extensive data on CRI, Beam Angles, and DALI systems, this might require Hazem's personal review. I recommend submitting the contact form for a detailed consultation." + disclaimer;
-    };
-
     const handleSendMessage = async () => {
         if (!inputValue.trim()) return;
 
         const userMsg = inputValue;
-        setMessages(prev => [...prev, { role: "user", content: userMsg }]);
+        const newHistory = [...messages, { role: "user" as const, content: userMsg }];
+
+        setMessages(newHistory);
         setInputValue("");
         setIsThinking(true);
 
-        // Simulate AI Latency
-        setTimeout(() => {
-            const reply = generateResponse(userMsg);
-            setMessages(prev => [...prev, { role: "assistant", content: reply }]);
+        try {
+            const response = await fetch("/api/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ messages: newHistory.filter(m => m.type !== "analysis") }), // Send only text history
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || "Failed to connect to Volts Mainframe.");
+            }
+
+            setMessages(prev => [...prev, { role: "assistant", content: data.reply }]);
+        } catch (error) {
+            console.error("Chat Error", error);
+            setMessages(prev => [...prev, { role: "assistant", content: "Connection Interrupted. Please try again." }]);
+        } finally {
             setIsThinking(false);
-        }, 1500);
+        }
     };
 
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
-            setMessages(prev => [...prev, { role: "user", content: `[Uploaded Image: ${file.name}]` }]);
+            setMessages(prev => [...prev, { role: "user", content: `[Uploaded Image: ${file.name}]`, type: "text" }]);
             setIsThinking(true);
 
-            // Simulate Vision Analysis
+            // Simulate Vision Analysis (Vision API is separate, keeping simulation or connecting to vision endpoint later)
+            // For now, let's keep the simulation for image upload as it's separate from text chat context usually
             setTimeout(() => {
                 setMessages(prev => [...prev, {
                     role: "assistant",

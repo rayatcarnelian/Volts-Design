@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import SpotlightCursor from "@/components/SpotlightCursor";
+import IgnitionPreloader from "@/components/IgnitionPreloader";
 import Footer from "@/components/Footer";
 
 const playfair = Playfair_Display({
@@ -33,6 +33,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${inter.variable} antialiased bg-[#050505] text-[#E5E5E5]`}
       >
         <SmoothScroll>
+          <IgnitionPreloader />
           {children}
           <Footer />
         </SmoothScroll>

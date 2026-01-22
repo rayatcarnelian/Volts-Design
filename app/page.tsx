@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import ServicesList from "@/components/ServicesList";
-import ComparisonSlider from "@/components/ComparisonSlider";
+import QuantumSlider from "@/components/QuantumSlider";
 import VoltsBot from "@/components/VoltsBot";
 import BeamSimulator from "@/components/BeamSimulator";
 import Link from "next/link";
@@ -30,14 +30,16 @@ export default function Home() {
       </section>
 
 
-      {/* Services List removed as per request (redundant categories) */}
+      <section id="services">
+        <ServicesList />
+      </section>
 
       <div id="about"> {/* Optional ID for Comparison if needed, or keeping generic div */}
         <section className="py-24 bg-[#050505] relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/volts-logo.png')] opacity-5 bg-center bg-no-repeat bg-contain blur-3xl" />
 
           <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
-            <h2 className="text-3xl md:text-5xl font-serif text-[#E5E5E5] mb-8">
+            <h2 className="text-2xl md:text-5xl font-serif text-[#E5E5E5] mb-8">
               LIGHTING <span className="text-[#D4AF37]">TRANSFORMATION</span>
             </h2>
             <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
@@ -45,11 +47,11 @@ export default function Home() {
             </p>
 
             <div className="mb-24">
-              <ComparisonSlider />
+              <QuantumSlider />
             </div>
 
             <div className="mb-16">
-              <h2 className="text-3xl md:text-5xl font-serif text-[#E5E5E5] mb-4">
+              <h2 className="text-2xl md:text-5xl font-serif text-[#E5E5E5] mb-4">
                 PRECISION <span className="text-[#D4AF37]">ENGINEERING.</span>
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto mb-12">

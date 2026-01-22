@@ -2,7 +2,7 @@
 
 import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, TorusKnot, Plane, SpotLight, Text, AdaptiveDpr } from "@react-three/drei";
+import { OrbitControls, TorusKnot, Plane, SpotLight, AdaptiveDpr } from "@react-three/drei";
 import * as THREE from "three";
 
 function Scene({ beamAngle, softness, showWireframe }: { beamAngle: number, softness: number, showWireframe: boolean }) {

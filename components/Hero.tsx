@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
@@ -19,32 +18,18 @@ export default function Hero() {
             </div>
 
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="text-4xl md:text-7xl font-serif text-[#E5E5E5] mb-6 tracking-tight leading-tight"
-                >
+                <h1 className="text-4xl md:text-7xl font-serif text-[#E5E5E5] mb-6 tracking-tight leading-tight">
                     ARCHITECTURAL <span className="text-[#D4AF37]">LIGHTING SPECIALISTS</span>
-                </motion.h1>
+                </h1>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.7 }}
-                    className="text-lg md:text-xl text-gray-300 font-light tracking-wide max-w-2xl mx-auto mb-10"
-                >
+                <p className="text-lg md:text-xl text-gray-300 font-light tracking-wide max-w-2xl mx-auto mb-10">
                     Precision Design, Planning & Implementation for Residential & Commercial Spaces.
-                </motion.p>
+                </p>
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1.2 }}
-                >
+                <div>
                     <div className="w-px h-20 bg-gradient-to-b from-[#D4AF37] to-transparent mx-auto mt-12" />
                     <ArrowDown className="w-5 h-5 text-[#D4AF37] mx-auto mt-4 animate-bounce" />
-                </motion.div>
+                </div>
             </div>
         </section >
     );

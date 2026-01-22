@@ -34,11 +34,11 @@ export default function Footer() {
                         <ul className="space-y-4 font-mono text-sm text-gray-300">
                             <li className="flex items-center gap-3">
                                 <Mail size={16} className="text-[#D4AF37]" />
-                                <a href="mailto:management@voltsdesign.com" className="hover:text-white transition-colors">management@voltsdesign.com</a>
+                                <a href="mailto:info@voltsdesign.com" className="hover:text-white transition-colors">info@voltsdesign.com</a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <MessageCircle size={16} className="text-[#D4AF37]" />
-                                <a href="https://wa.me/60182753483" target="_blank" className="hover:text-white transition-colors">+60 18-275 3483</a>
+                                <a href="https://wa.me/60182985882" target="_blank" className="hover:text-white transition-colors">+60 18-298 5882</a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Instagram size={16} className="text-[#D4AF37]" />

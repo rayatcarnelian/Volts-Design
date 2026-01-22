@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -21,6 +20,8 @@ export default function Navbar() {
     const navLinks = [
         { name: "PORTFOLIO", href: "/portfolio" },
         { name: "SERVICES", href: "/#services" },
+        { name: "LIGHT LAB", href: "/lab" },
+        { name: "JOURNAL", href: "/journal" },
         { name: "CONTACT", href: "/contact" },
     ];
 
@@ -36,8 +37,12 @@ export default function Navbar() {
                     {/* Logo - Inverted & Blended for Dark Mode */}
                     {/* Logo - Color Corrected for Dark Mode */}
                     {/* Logo - Text Based for Perfect Integration */}
-                    <Link href="/" className="text-2xl font-serif text-[#E5E5E5] tracking-widest relative z-50 hover:text-white transition-colors">
-                        VOLTS DESIGN
+                    <Link href="/" className="relative z-50 group block">
+                        <div className="flex flex-col justify-center transition-transform duration-300 group-hover:scale-105">
+                            <span className="text-3xl font-serif text-white tracking-[0.15em] hover:text-[#D4AF37] transition-colors duration-300">
+                                VOLTS DESIGN
+                            </span>
+                        </div>
                     </Link>
 
                     {/* Desktop Nav */}
@@ -53,11 +58,11 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <Link
-                            href="https://wa.me/60182753483"
+                            href="https://wa.me/60182985882"
                             target="_blank"
                             className="bg-[#D4AF37] text-black px-6 py-2 text-xs font-bold font-mono tracking-wider hover:bg-white transition-colors"
                         >
-                            LET'S TALK
+                            LET&apos;S TALK
                         </Link>
                     </div>
 

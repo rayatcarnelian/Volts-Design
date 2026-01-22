@@ -8,44 +8,69 @@ import Navbar from "@/components/Navbar";
 
 // Expanded Data with Descriptions and Gallery Images
 const allProjects = [
-    // Commercial / Retail
     {
         id: 1,
         title: "Aetas Sales Gallery",
         category: "Commercial",
-        src: "/projects/project-1.png",
+        src: "/projects/aetas-sales/Screenshot_1.png",
         location: "Kuala Lumpur",
         description: "A symphony of light and shadow designed to elevate the property viewing experience. We utilized warm, concealed linear lighting to guide visitors through the space, creating an emotional journey from entrance to closing.",
-        gallery: ["/projects/project-1.png", "/projects/project-3.jpg", "/projects/project-5.jpg"]
+        gallery: ["/projects/aetas-sales/Screenshot_1.png", "/projects/aetas-sales/Screenshot_2.png", "/projects/aetas-sales/Screenshot_3.png"]
     },
     {
-        id: 2,
-        title: "Old Town Heritage",
-        category: "Commercial",
-        src: "/projects/project-3.jpg",
-        location: "Ipoh",
-        description: "Revitalizing a historic landmark with modern illumination techniques while preserving its colonial charm. The lighting design focuses on highlighting architectural textures—brick, wood, and plaster—without overpowering the original aesthetic.",
-        gallery: ["/projects/project-3.jpg", "/projects/project-1.png", "/projects/retail/gold-hill-1.jpg"]
+        id: 11,
+        title: "Golden Sun Club",
+        category: "F&B",
+        src: "/projects/golden-sun/487171515_1079218950898186_3249925751065150302_n.jpg",
+        location: "Kuala Lumpur",
+        description: "High-energy nightlife lighting design using programmed LED pixels and moving heads to synchronize with the music, creating an immersive sensory experience.",
+        gallery: ["/projects/golden-sun/487103027_1079218937564854_2730222437339798446_n.jpg", "/projects/golden-sun/486802347_1079219144231500_1366745404938446586_n.jpg", "/projects/golden-sun/488023151_1079218960898185_1917273508085614533_n.jpg"]
     },
     {
         id: 3,
-        title: "Gold Hill Bistro",
+        title: "Empire of Gold",
         category: "F&B",
-        src: "/projects/retail/gold-hill-1.jpg",
+        src: "/projects/gold-hill/476235808_122221614434026826_2363352486470271201_n.jpg",
         location: "Genting Highlands",
         description: "An intimate dining atmosphere crafted through layered lighting. Low-kelvin pendants create pockets of privacy for diners, while architectural accent lights reveal the richness of the interior materials.",
-        gallery: ["/projects/retail/gold-hill-1.jpg", "/projects/retail/gold-hill-2.jpg", "/projects/retail/golden-sun-1.jpg"]
+        gallery: ["/projects/gold-hill/476235808_122221614434026826_2363352486470271201_n.jpg", "/projects/gold-hill/476351071_122221614230026826_2626066982721069945_n (1).jpg", "/projects/gold-hill/476449139_122221614644026826_242461573600559703_n (1).jpg"]
     },
-    // ... (Other projects would follow similar pattern, keeping it concise for now)
-    { id: 4, title: "Gold Hill Lounge", category: "F&B", src: "/projects/retail/gold-hill-2.jpg", location: "Genting Highlands", description: "A luxurious lounge setting requiring dynamic lighting control. We implemented a DALI system to shift the mood from a bright afternoon tea setting to a moody, high-contrast evening cocktail vibe.", gallery: ["/projects/retail/gold-hill-2.jpg"] },
-    { id: 11, title: "Golden Sun Club", category: "F&B", src: "/projects/retail/golden-sun-1.jpg", location: "Kuala Lumpur", description: "High-energy nightlife lighting design using programmed LED pixels and moving heads to synchronize with the music, creating an immersive sensory experience.", gallery: ["/projects/retail/golden-sun-1.jpg"] },
-    { id: 12, title: "Upper Palace (TRX)", category: "F&B", src: "/projects/retail/upper-palace-1.jpg", location: "TRX Exchange", description: "The pinnacle of fine dining at TRX. Crystal chandeliers meet precision spot-lighting to make every dish look like a jewel.", gallery: ["/projects/retail/upper-palace-1.jpg"] },
-    { id: 5, title: "Mitsui HQ", category: "Office", src: "/projects/project-5.jpg", location: "Mitsui Park", description: "Human-centric office lighting designed to improve productivity and well-being. Circadian rhythm programming adjusts color temperature throughout the day.", gallery: ["/projects/project-5.jpg"] },
-    { id: 6, title: "Panel Plus Office", category: "Office", src: "/projects/office/panel-plus-1.jpg", location: "Kuala Lumpur", description: "A modern, minimalist workspace where light acts as the primary wayfinding tool. Linear profiles define circulation paths and meeting zones.", gallery: ["/projects/office/panel-plus-1.jpg"] },
-    { id: 7, title: "Panel Plus Meeting", category: "Office", src: "/projects/office/panel-plus-2.jpg", location: "Kuala Lumpur", description: "A focused environment for high-stakes decision making. Glare-free illumination ensures comfort during long video conferences.", gallery: ["/projects/office/panel-plus-2.jpg"] },
-    { id: 8, title: "The Oval Residence", category: "Residential", src: "/projects/residential/oval-1.jpg", location: "KLCC", description: "Ultra-luxury residential lighting. We integrated lighting into joinery and coves to eliminate visual clutter, letting the view of the Twin Towers take center stage.", gallery: ["/projects/residential/oval-1.jpg"] },
-    { id: 9, title: "The Oval Interior", category: "Residential", src: "/projects/residential/oval-2.jpg", location: "KLCC", description: "Interior warmth and sophistication. Every fixture was chosen to complement the bespoke furniture and artwork collection of the client.", gallery: ["/projects/residential/oval-2.jpg"] },
-    { id: 10, title: "Private Villa", category: "Residential", src: "/projects/project-1.png", location: "Damansara", description: "A sanctuary in the city. Landscape lighting integrates the indoor living spaces with the lush outdoor garden, blurring the boundaries of the home.", gallery: ["/projects/project-1.png"] },
+    {
+        id: 12,
+        title: "Upper Palace (TRX)",
+        category: "F&B",
+        src: "/projects/upper-palace/530620448_3268468223300999_7778033962337080290_n.jpg",
+        location: "TRX Exchange",
+        description: "The pinnacle of fine dining at TRX. Crystal chandeliers meet precision spot-lighting to make every dish look like a jewel.",
+        gallery: ["/projects/upper-palace/530620448_3268468223300999_7778033962337080290_n.jpg", "/projects/upper-palace/medium-0001c298fd1684c151ca17910938fc91.jpg"]
+    },
+    {
+        id: 6,
+        title: "Panel Plus HQ",
+        category: "Office",
+        src: "/projects/panel-plus/IMG-20251123-WA0064.jpg",
+        location: "Industrial Park",
+        description: "Industrial chic office lighting. Linear pendants and cool white tones foster focus and clarity in this modern workspace.",
+        gallery: ["/projects/panel-plus/IMG-20251123-WA0066.jpg", "/projects/panel-plus/IMG-20251123-WA0068.jpg"]
+    },
+    {
+        id: 5,
+        title: "PJ Bungalow",
+        category: "Residential",
+        src: "/projects/pj-bungalow/IMG-20250528-WA0016.jpg",
+        location: "Petaling Jaya",
+        description: "A private residence illuminated with warmth and subtly. Landscape lighting extends the living space outdoors.",
+        gallery: ["/projects/pj-bungalow/IMG-20250528-WA0017.jpg", "/projects/pj-bungalow/IMG-20250528-WA0018.jpg"]
+    },
+    {
+        id: 13,
+        title: "Aetas Show Unit",
+        category: "Residential",
+        src: "/projects/aetas/Screenshot_1.png",
+        location: "Damansara",
+        description: "Luxury show unit lighting design designed to highlight textures and finishes.",
+        gallery: ["/projects/aetas/Screenshot_1.png", "/projects/aetas/Screenshot_2.png", "/projects/aetas/Screenshot_3.png"]
+    }
 ];
 
 const categories = ["All", "Residential", "Commercial", "Office", "F&B"];
@@ -160,6 +185,7 @@ function PortfolioContent() {
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm overflow-y-auto"
                         onClick={() => setSelectedProject(null)}
+                        data-lenis-prevent
                     >
                         {/* Close Button */}
                         <button
