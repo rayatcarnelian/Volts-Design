@@ -151,7 +151,7 @@ export default function QuantumSlider({
 
             {/* ------------------- CONTROLS ------------------- */}
 
-            <div className="absolute bottom-12 w-full max-w-3xl px-6 z-30 flex flex-col items-center gap-6">
+            <div className="absolute bottom-12 w-full max-w-3xl px-6 z-30 flex flex-col items-center gap-6 left-0 right-0 mx-auto">
 
                 {/* Phase Indicators */}
                 <div className="flex justify-between w-full text-[10px] font-mono tracking-widest text-gray-400 uppercase px-2 mb-1">
@@ -184,7 +184,7 @@ export default function QuantumSlider({
 
                     {/* Custom Thumb Visual */}
                     <div
-                        className="absolute h-8 w-1 lg:h-12 lg:w-16 -ml-8 lg:-ml-8 top-1/2 -translate-y-1/2 pointer-events-none transition-all duration-75 flex items-center justify-center z-40"
+                        className="absolute h-12 w-12 -ml-6 top-1/2 -translate-y-1/2 pointer-events-none transition-all duration-75 flex items-center justify-center z-40"
                         style={{ left: `${sliderValue}%` }}
                     >
                         {/* The Glowing Grip */}
