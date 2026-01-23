@@ -3,39 +3,48 @@ export default function JsonLd() {
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "Organization",
+                "@type": "ProfessionalService",
                 "@id": "https://volts-design.vercel.app/#organization",
                 "name": "Volts Design",
                 "url": "https://volts-design.vercel.app",
-                "logo": "https://volts-design.vercel.app/logo-new.png",
-                "description": "Premier Architectural Lighting Design Firm in Malaysia.",
+                "logo": "https://volts-design.vercel.app/icon.png",
+                "image": "https://volts-design.vercel.app/og-image.jpg",
+                "description": "Premier Architectural Lighting Design Firm in Malaysia specializing in luxury residential and commercial projects.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Kuala Lumpur",
+                    "addressCountry": "MY"
+                },
                 "contactPoint": {
                     "@type": "ContactPoint",
-                    "telephone": "+60-12-345-6789", // Placeholder
-                    "contactType": "customer service"
+                    "telephone": "+60-18-298-5882",
+                    "contactType": "customer service",
+                    "email": "info@voltsdesign.com",
+                    "availableLanguage": ["English", "Malay"]
                 },
                 "sameAs": [
-                    "https://www.instagram.com/voltsdesign",
-                    "https://twitter.com/voltsdesign" // Placeholder
-                ]
+                    "https://www.instagram.com/volts.electra",
+                    "https://wa.me/60182985882"
+                ],
+                "priceRange": "$$$$"
             },
             {
                 "@type": "Person",
                 "@id": "https://volts-design.vercel.app/#hazem",
                 "name": "Hazem",
-                "jobTitle": "Architectural Lighting Architect",
+                "jobTitle": "Principal Lighting Architect",
                 "worksFor": {
                     "@id": "https://volts-design.vercel.app/#organization"
                 },
                 "url": "https://volts-design.vercel.app",
-                "image": "https://volts-design.vercel.app/profile.jpg" // Placeholder if valid
+                "sameAs": ["https://instagram.com/volts.electra"]
             },
             {
                 "@type": "WebSite",
                 "@id": "https://volts-design.vercel.app/#website",
                 "url": "https://volts-design.vercel.app",
                 "name": "Volts Design",
-                "description": "Architectural Lighting Architect",
+                "description": "Architectural Lighting Design Malaysia",
                 "publisher": {
                     "@id": "https://volts-design.vercel.app/#organization"
                 },
